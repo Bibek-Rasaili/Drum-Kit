@@ -38,15 +38,9 @@ function playAudio (character) {
       return crash.play();
       //break;
 
-    default: //This should never really run
-
-    //legacy from the click event Listener
-      console.log("Error! something went wrong. - check Event Listener");
-      console.log("The value of this.textContent is: " + character);
-
-    //legacy from onKeyDown event Listener
+    default: //This runs when an input other than the above are detected.
       console.log(event);
-      console.log(event.key + " has no input for this functionality");
+      console.log("Key entered is: "+event.key + " which has no functionality for this webpage");
   }
 }
 
