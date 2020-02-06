@@ -1,4 +1,3 @@
-
 var kick = new Audio('sounds/kick-bass.mp3');
 var crash = new Audio('sounds/crash.mp3');
 var tom1 = new Audio('sounds/tom-1.mp3');
@@ -7,32 +6,31 @@ var tom3 = new Audio('sounds/tom-3.mp3');
 var tom4 = new Audio('sounds/tom-4.mp3');
 var snare = new Audio('sounds/snare.mp3');
 
-for(var i=0; i<document.querySelectorAll(".drum").length; i++)
-{
-  document.querySelectorAll(".drum")[i].addEventListener("click", function(){
+for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
 
     console.log(this);
     // this.style.color ="white"; //<--Challenge
     console.log(this.textContent);
-//this.textContent or className returns the textContent or class name of the triggered button
+    //this.textContent or className returns the textContent or class name of the triggered button
 
     var letterStorage = this.textContent;
 
-    switch(letterStorage) {
+    switch (letterStorage) {
 
-      case ("w") :
+      case ("w"):
         snare.play();
         break;
 
-      case ("a") :
+      case ("a"):
         tom3.play();
         break;
 
-      case ("s") :
+      case ("s"):
         tom1.play();
         break;
 
-      case ("d") :
+      case ("d"):
         kick.play();
         break;
 
@@ -40,24 +38,79 @@ for(var i=0; i<document.querySelectorAll(".drum").length; i++)
         tom2.play();
         break;
 
-      case ("k") :
+      case ("k"):
         tom4.play();
         break;
 
-      case ("l") :
+      case ("l"):
         crash.play();
         break;
 
-      default : //This should never really run
+      default: //This should never really run
         alert("Error! something went wrong. - check Event Listener");
+        console.log("The value of this.textContent is: " + letterStorage);
     }
-
   })
 }
 
+// ---- OnKeyDown
+
+  document.querySelector("html").addEventListener("keydown", function(){
+    if (event.keyCode === 65)
+    {
+      alert("Thats an A!");
+    }
+
+    if (event.keyCode === 68)
+    {
+      alert("Thats an D!");
+    }
+
+    if (event.keyCode === 72)
+    {
+      alert("Thats an H!");
+    }
+
+    if (event.keyCode === 74)
+    {
+      alert("Thats an J!");
+    }
+
+    if (event.keyCode === 75)
+    {
+      alert("Thats an K!");
+    }
+
+    if (event.keyCode === 76)
+    {
+      alert("Thats an L!");
+    }
+
+    if (event.keyCode === 83)
+    {
+      alert("Thats an S!");
+    }
+
+    if (event.keyCode === 87)
+    {
+      alert("Thats an W!");
+    }
 
 
+    //keyCode
+    //65 is a
+    //90 is z
 
+    //66 is b (65+1)
+    //d (65+3) = 68;
+    //h (65+7) = 72;
+    //j (65+9) = 74;
+    //k (65+10) = 75;
+    //l = 76
+
+    //s (65+18) = 83;
+    //w (65+21) = 86;
+  });
 
 
 
