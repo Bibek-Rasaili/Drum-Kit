@@ -10,7 +10,28 @@ var snare = new Audio('sounds/snare.mp3');
 for(var i=0; i<document.querySelectorAll(".drum").length; i++)
 {
   document.querySelectorAll(".drum")[i].addEventListener("click", function(){
-    tom1.play();
+
+    console.log(this);
+    // this.style.color ="white"; //<--Challenge
+    console.log(this.textContent);
+//this.textContent or className returns the textContent or class name of the triggered button
+
+    var letterStorage = this.textContent;
+
+    if (letterStorage === "w")
+      snare.play()
+      else if (letterStorage === "a")
+        tom3.play()
+        else  if (letterStorage === "s")
+          tom1.play()
+          else if (letterStorage ==="d")
+            kick.play()
+            else if (letterStorage ==="j")
+              tom2.play()
+              else if (letterStorage ==="k")
+                tom4.play()
+                else
+                  crash.play();
   })
 }
 
