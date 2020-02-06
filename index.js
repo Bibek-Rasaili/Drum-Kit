@@ -6,6 +6,45 @@ var tom3 = new Audio('sounds/tom-3.mp3');
 var tom4 = new Audio('sounds/tom-4.mp3');
 var snare = new Audio('sounds/snare.mp3');
 
+
+function playAudio (character) {
+  switch (character) {
+
+    case ("w"):
+      return snare.play();
+      //break;
+
+    case ("a"):
+      return tom3.play();
+      //break;
+
+    case ("s"):
+      return tom1.play();
+      //break;
+
+    case ("d"):
+      return kick.play();
+      //break;
+
+    case ("j"):
+      return tom2.play();
+      //break;
+
+    case ("k"):
+      return tom4.play();
+    //  break;
+
+    case ("l"):
+      return crash.play();
+      //break;
+
+    default: //This should never really run
+      alert("Error! something went wrong. - check Event Listener");
+      console.log("The value of this.textContent is: " + character);
+  }
+}
+
+
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
 
@@ -16,40 +55,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
     var letterStorage = this.textContent;
 
-    switch (letterStorage) {
-
-      case ("w"):
-        snare.play();
-        break;
-
-      case ("a"):
-        tom3.play();
-        break;
-
-      case ("s"):
-        tom1.play();
-        break;
-
-      case ("d"):
-        kick.play();
-        break;
-
-      case ("j"):
-        tom2.play();
-        break;
-
-      case ("k"):
-        tom4.play();
-        break;
-
-      case ("l"):
-        crash.play();
-        break;
-
-      default: //This should never really run
-        alert("Error! something went wrong. - check Event Listener");
-        console.log("The value of this.textContent is: " + letterStorage);
-    }
+    playAudio(letterStorage);
   })
 }
 
@@ -60,36 +66,36 @@ document.querySelector("html").addEventListener("keydown", function(event) {
   switch (event.keyCode) {
 
     case 65: //a
-      tom3.play();
+      playAudio("a");
       break;
 
     case 68: //d
-      kick.play();
+      playAudio("d");
       break;
 
     case 74: //j
-      tom2.play();
+      playAudio("j");
       break;
 
     case 75: //k
-      tom4.play();
+      playAudio("k");
       break;
 
     case 76: //l
-      crash.play();
+      playAudio("l");
       break;
 
     case 83: //s
-      tom1.play();
+      playAudio("s");
       break;
 
     case 87: //w
-      snare.play();
+      playAudio("w");
       break;
 
     default:
       console.log(event);
-      console.log(event.KeyCode + " has no input for this functionality");
+      console.log(event.key + " has no input for this functionality");
   }
   //keyCode
   //65 is a
