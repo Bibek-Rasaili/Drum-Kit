@@ -58,42 +58,42 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   document.querySelector("html").addEventListener("keydown", function(){
     if (event.keyCode === 65)
     {
-      alert("Thats an A!");
+      tom3.play();
     }
 
     if (event.keyCode === 68)
     {
-      alert("Thats an D!");
+      kick.play();
     }
 
-    if (event.keyCode === 72)
-    {
-      alert("Thats an H!");
-    }
+    // if (event.keyCode === 72)
+    // {
+    //   alert("Thats an H!");
+    // }
 
     if (event.keyCode === 74)
     {
-      alert("Thats an J!");
+      tom2.play();
     }
 
     if (event.keyCode === 75)
     {
-      alert("Thats an K!");
+      tom4.play();
     }
 
     if (event.keyCode === 76)
     {
-      alert("Thats an L!");
+      crash.play();
     }
 
     if (event.keyCode === 83)
     {
-      alert("Thats an S!");
+      tom1.play();
     }
 
     if (event.keyCode === 87)
     {
-      alert("Thats an W!");
+      snare.play();
     }
 
 
