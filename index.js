@@ -55,63 +55,86 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
 // ---- OnKeyDown
 
-  document.querySelector("html").addEventListener("keydown", function(){
-    if (event.keyCode === 65)
-    {
+document.querySelector("html").addEventListener("keydown", function() {
+  switch (event.keyCode) {
+
+    case 65:
       tom3.play();
-    }
+      break;
 
-    if (event.keyCode === 68)
-    {
+    case 68:
       kick.play();
-    }
+      break;
 
-    // if (event.keyCode === 72)
-    // {
-    //   alert("Thats an H!");
-    // }
-
-    if (event.keyCode === 74)
-    {
+    case 74:
       tom2.play();
-    }
+      break;
 
-    if (event.keyCode === 75)
-    {
+    case 75:
       tom4.play();
-    }
+      break;
 
-    if (event.keyCode === 76)
-    {
+    case 76:
       crash.play();
-    }
+      break;
 
-    if (event.keyCode === 83)
-    {
+    case 83:
       tom1.play();
-    }
+      break;
 
-    if (event.keyCode === 87)
-    {
+
+    case 87:
       snare.play();
-    }
+      break;
+
+    default:
+      console.log(event.KeyCode + " has no input for this functionality");
+  }
 
 
-    //keyCode
-    //65 is a
-    //90 is z
+  // if (event.keyCode === 65) {
+  //
+  // }
+  //
+  // if (event.keyCode === 68) {
+  //
+  // }
+  //
+  // if (event.keyCode === ) {
+  //
+  // }
+  //
+  // if (event.keyCode === ) {
+  //
+  // }
+  //
+  // if (event.keyCode === ) {
+  //
+  // }
+  //
+  // if (event.keyCode === ) {
+  //
+  // }
+  //
+  // if (event.keyCode === ) {
+  //
+  // }
 
-    //66 is b (65+1)
-    //d (65+3) = 68;
-    //h (65+7) = 72;
-    //j (65+9) = 74;
-    //k (65+10) = 75;
-    //l = 76
 
-    //s (65+18) = 83;
-    //w (65+21) = 86;
-  });
+  //keyCode
+  //65 is a
+  //90 is z
 
+  //66 is b (65+1)
+  //d (65+3) = 68;
+  //h (65+7) = 72;
+  //j (65+9) = 74;
+  //k (65+10) = 75;
+  //l = 76
+
+  //s (65+18) = 83;
+  //w (65+21) = 86;
+});
 
 
 
