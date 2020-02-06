@@ -39,8 +39,14 @@ function playAudio (character) {
       //break;
 
     default: //This should never really run
-      alert("Error! something went wrong. - check Event Listener");
+
+    //legacy from the click event Listener
+      console.log("Error! something went wrong. - check Event Listener");
       console.log("The value of this.textContent is: " + character);
+
+    //legacy from onKeyDown event Listener
+      console.log(event);
+      console.log(event.key + " has no input for this functionality");
   }
 }
 
@@ -63,40 +69,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
 //document.addEventListener works too.
 document.querySelector("html").addEventListener("keydown", function(event) {
-  switch (event.keyCode) {
-
-    case 65: //a
-      playAudio("a");
-      break;
-
-    case 68: //d
-      playAudio("d");
-      break;
-
-    case 74: //j
-      playAudio("j");
-      break;
-
-    case 75: //k
-      playAudio("k");
-      break;
-
-    case 76: //l
-      playAudio("l");
-      break;
-
-    case 83: //s
-      playAudio("s");
-      break;
-
-    case 87: //w
-      playAudio("w");
-      break;
-
-    default:
-      console.log(event);
-      console.log(event.key + " has no input for this functionality");
-  }
+    playAudio(event.key);
   //keyCode
   //65 is a
   //90 is z
