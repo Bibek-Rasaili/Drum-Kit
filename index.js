@@ -12,31 +12,25 @@ function playAudio (character) {
 
     case ("w"):
       return snare.play();
-      //break;
+      //break not needed as, return should break/stop the case/switch.
 
     case ("a"):
       return tom3.play();
-      //break;
 
     case ("s"):
       return tom1.play();
-      //break;
 
     case ("d"):
       return kick.play();
-      //break;
 
     case ("j"):
       return tom2.play();
-      //break;
 
     case ("k"):
       return tom4.play();
-    //  break;
 
     case ("l"):
       return crash.play();
-      //break;
 
     default: //This runs when an input other than the above are detected.
       console.log(event);
@@ -44,39 +38,28 @@ function playAudio (character) {
   }
 }
 
-
+// Detecting Button click
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
 
-    console.log(this);
-    // this.style.color ="white"; //<--Challenge
-    console.log(this.textContent);
-    //this.textContent or className returns the textContent or class name of the triggered button
+    console.log(this); //this returns/is the current button that was clicked.
+    console.log(this.textContent); //its content/child, etc can be retrieved.
+//i.e.
+//this.textContent or className returns the textContent or class name of the triggered button
+// this.style.color ="white"; //<--Challenge
+
 
     var letterStorage = this.textContent;
-
     playAudio(letterStorage);
   })
 }
 
-// ---- OnKeyDown
+
+// Detecting Keyboard Press/Down
 
 //document.addEventListener works too.
 document.querySelector("html").addEventListener("keydown", function(event) {
     playAudio(event.key);
-  //keyCode
-  //65 is a
-  //90 is z
-
-  //66 is b (65+1)
-  //d (65+3) = 68;
-  //h (65+7) = 72;
-  //j (65+9) = 74;
-  //k (65+10) = 75;
-  //l = 76
-
-  //s (65+18) = 83;
-  //w (65+21) = 86;
 });
 
 
