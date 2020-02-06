@@ -18,20 +18,40 @@ for(var i=0; i<document.querySelectorAll(".drum").length; i++)
 
     var letterStorage = this.textContent;
 
-    if (letterStorage === "w")
-      snare.play()
-      else if (letterStorage === "a")
-        tom3.play()
-        else  if (letterStorage === "s")
-          tom1.play()
-          else if (letterStorage ==="d")
-            kick.play()
-            else if (letterStorage ==="j")
-              tom2.play()
-              else if (letterStorage ==="k")
-                tom4.play()
-                else
-                  crash.play();
+    switch(letterStorage) {
+
+      case ("w") :
+        snare.play();
+        break;
+
+      case ("a") :
+        tom3.play();
+        break;
+
+      case ("s") :
+        tom1.play();
+        break;
+
+      case ("d") :
+        kick.play();
+        break;
+
+      case ("j"):
+        tom2.play();
+        break;
+
+      case ("k") :
+        tom4.play();
+        break;
+
+      case ("l") :
+        crash.play();
+        break;
+
+      default : //This should never really run
+        alert("Error! something went wrong. - check Event Listener");
+    }
+
   })
 }
 
