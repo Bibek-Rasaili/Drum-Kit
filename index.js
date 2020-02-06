@@ -55,72 +55,42 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
 // ---- OnKeyDown
 
-document.querySelector("html").addEventListener("keydown", function() {
+//document.addEventListener works too.
+document.querySelector("html").addEventListener("keydown", function(event) {
   switch (event.keyCode) {
 
-    case 65:
+    case 65: //a
       tom3.play();
       break;
 
-    case 68:
+    case 68: //d
       kick.play();
       break;
 
-    case 74:
+    case 74: //j
       tom2.play();
       break;
 
-    case 75:
+    case 75: //k
       tom4.play();
       break;
 
-    case 76:
+    case 76: //l
       crash.play();
       break;
 
-    case 83:
+    case 83: //s
       tom1.play();
       break;
 
-
-    case 87:
+    case 87: //w
       snare.play();
       break;
 
     default:
+      console.log(event);
       console.log(event.KeyCode + " has no input for this functionality");
   }
-
-
-  // if (event.keyCode === 65) {
-  //
-  // }
-  //
-  // if (event.keyCode === 68) {
-  //
-  // }
-  //
-  // if (event.keyCode === ) {
-  //
-  // }
-  //
-  // if (event.keyCode === ) {
-  //
-  // }
-  //
-  // if (event.keyCode === ) {
-  //
-  // }
-  //
-  // if (event.keyCode === ) {
-  //
-  // }
-  //
-  // if (event.keyCode === ) {
-  //
-  // }
-
-
   //keyCode
   //65 is a
   //90 is z
