@@ -6,30 +6,59 @@ var tom3 = new Audio('sounds/tom-3.mp3');
 var tom4 = new Audio('sounds/tom-4.mp3');
 var snare = new Audio('sounds/snare.mp3');
 
+function removePressedFromButton()
+{
+  for (var i=0; i < document.querySelectorAll("button").length; i++ )
+  {
+    document.querySelectorAll("button")[i].classList.remove("pressed");
+  }
+}
+
 
 function playAudio (character) {
   switch (character) {
 
     case ("w"):
-      return snare.play();
+      removePressedFromButton();
+      document.querySelector(".w").classList.add("pressed");
+      snare.play();
+  //    document.querySelector(".w").classList.remove("pressed");
+      //this has no effect. i.e. causes no animation
+      //therefore the removePressedFromButton() function was created.
+      break;
       //break not needed as, return should break/stop the case/switch.
 
+      //call for animation will go here
+
     case ("a"):
-      return tom3.play();
+      removePressedFromButton();
+      document.querySelector(".a").classList.add("pressed");
+      tom3.play();
+      break;
 
     case ("s"):
+    removePressedFromButton();
+    document.querySelector(".s").classList.add("pressed");
       return tom1.play();
 
     case ("d"):
+    removePressedFromButton();
+    document.querySelector(".d").classList.add("pressed");
       return kick.play();
 
     case ("j"):
+    removePressedFromButton();
+    document.querySelector(".j").classList.add("pressed");
       return tom2.play();
 
     case ("k"):
+    removePressedFromButton();
+    document.querySelector(".k").classList.add("pressed");
       return tom4.play();
 
     case ("l"):
+    removePressedFromButton();
+    document.querySelector(".l").classList.add("pressed");
       return crash.play();
 
     default: //This runs when an input other than the above are detected.
@@ -51,6 +80,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
     var letterStorage = this.textContent;
     playAudio(letterStorage);
+
   })
 }
 
