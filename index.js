@@ -14,13 +14,17 @@ function removePressedFromButton()
   }
 }
 
+function addPressedClassToBtn(key){
+  document.querySelector("."+key).classList.add("pressed");
+}
+
 
 function playAudio (character) {
   switch (character) {
 
     case ("w"):
       removePressedFromButton();
-      document.querySelector(".w").classList.add("pressed");
+      addPressedClassToBtn(character);
       snare.play();
   //    document.querySelector(".w").classList.remove("pressed");
       //this has no effect. i.e. causes no animation
@@ -32,33 +36,33 @@ function playAudio (character) {
 
     case ("a"):
       removePressedFromButton();
-      document.querySelector(".a").classList.add("pressed");
+      addPressedClassToBtn(character);
       tom3.play();
       break;
 
     case ("s"):
     removePressedFromButton();
-    document.querySelector(".s").classList.add("pressed");
+    addPressedClassToBtn(character);
       return tom1.play();
 
     case ("d"):
     removePressedFromButton();
-    document.querySelector(".d").classList.add("pressed");
+    addPressedClassToBtn(character);
       return kick.play();
 
     case ("j"):
     removePressedFromButton();
-    document.querySelector(".j").classList.add("pressed");
+    addPressedClassToBtn(character);
       return tom2.play();
 
     case ("k"):
     removePressedFromButton();
-    document.querySelector(".k").classList.add("pressed");
+    addPressedClassToBtn(character);
       return tom4.play();
 
     case ("l"):
     removePressedFromButton();
-    document.querySelector(".l").classList.add("pressed");
+    addPressedClassToBtn(character);
       return crash.play();
 
     default: //This runs when an input other than the above are detected.
