@@ -6,28 +6,18 @@ var tom3 = new Audio('sounds/tom-3.mp3');
 var tom4 = new Audio('sounds/tom-4.mp3');
 var snare = new Audio('sounds/snare.mp3');
 
-
 function addPressedClassToBtn(key) {
   document.querySelector("." + key).classList.add("pressed");
 }
-
 
 function playAudio(character) {
   switch (character) {
 
     case ("w"):
       return snare.play();
-      //    document.querySelector(".w").classList.remove("pressed");
-      //this has no effect. i.e. causes no animation
-      //therefore the removePressedFromButton() function was created.
-
-      //break not needed as, return should break/stop the case/switch.
-
-      //call for animation will go here
 
     case ("a"):
       return tom3.play();
-
 
     case ("s"):
       return tom1.play();
@@ -42,8 +32,6 @@ function playAudio(character) {
       return tom4.play();
 
     case ("l"):
-      removePressedFromButton();
-      addPressedClassToBtn(character);
       return crash.play();
 
     default: //This runs when an input other than the above are detected.
@@ -70,7 +58,6 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
     setTimeout(function(){
       document.querySelector("."+letterStorage).classList.remove("pressed");
     }, 100);
-
   })
 }
 
