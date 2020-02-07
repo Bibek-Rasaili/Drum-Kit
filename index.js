@@ -6,11 +6,6 @@ var tom3 = new Audio('sounds/tom-3.mp3');
 var tom4 = new Audio('sounds/tom-4.mp3');
 var snare = new Audio('sounds/snare.mp3');
 
-function removePressedFromButton() {
-  for (var i = 0; i < document.querySelectorAll("button").length; i++) {
-    document.querySelectorAll("button")[i].classList.remove("pressed");
-  }
-}
 
 function addPressedClassToBtn(key) {
   document.querySelector("." + key).classList.add("pressed");
