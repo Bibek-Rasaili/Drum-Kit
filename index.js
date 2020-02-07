@@ -21,7 +21,6 @@ function playAudio(character) {
   switch (character) {
 
     case ("w"):
-
       return snare.play();
       //    document.querySelector(".w").classList.remove("pressed");
       //this has no effect. i.e. causes no animation
@@ -73,7 +72,10 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
     addPressedClassToBtn(letterStorage);
     playAudio(letterStorage);
 
-    setTimeout(removePressedFromButton, 100);
+    setTimeout(function(){
+      document.querySelector("."+letterStorage).classList.remove("pressed");
+    }, 100);
+
   })
 }
 
@@ -85,7 +87,9 @@ document.querySelector("html").addEventListener("keydown", function(event) {
 
   addPressedClassToBtn(event.key);
   playAudio(event.key);
-  setTimeout(removePressedFromButton, 100);
+  setTimeout(function(){
+    document.querySelector("."+event.key).classList.remove("pressed");
+  }, 100);
 });
 
 
