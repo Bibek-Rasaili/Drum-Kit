@@ -69,10 +69,11 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
     // this.style.color ="white"; //<--Challenge
 
     var letterStorage = this.textContent;
-    removePressedFromButton();
+
     addPressedClassToBtn(letterStorage);
     playAudio(letterStorage);
 
+    setTimeout(removePressedFromButton, 100);
   })
 }
 
@@ -81,9 +82,10 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
 //document.addEventListener works too.
 document.querySelector("html").addEventListener("keydown", function(event) {
-  removePressedFromButton();
+
   addPressedClassToBtn(event.key);
   playAudio(event.key);
+  setTimeout(removePressedFromButton, 100);
 });
 
 
