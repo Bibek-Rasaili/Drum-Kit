@@ -46,9 +46,6 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
     console.log(this); //this returns/is the current button that was clicked.
     console.log(this.textContent); //its content/child, etc can be retrieved.
-    //i.e.
-    //this.textContent or className returns the textContent or class name of the triggered button
-    // this.style.color ="white"; //<--Challenge
 
     var letterStorage = this.textContent;
 
@@ -61,7 +58,6 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   })
 }
 
-
 // Detecting Keyboard Press/Down
 
 //document.addEventListener works too.
@@ -73,51 +69,3 @@ document.querySelector("html").addEventListener("keydown", function(event) {
     document.querySelector("."+event.key).classList.remove("pressed");
   }, 100);
 });
-
-
-
-
-
-
-
-
-
-/*
-For each
-document.querySelectorAll("button").forEach(item => {
-  item.addEventListener("click", function() {
-      alert("I got clicked");
-  })
-})
-*/
-//___________________________________________________
-
-/*
-handleClick() vs handleClick
- document.querySelector("button").addEventListener("click", handleClick);
-//handleClick() instantly calls the function
-//where else handleClick, assigns the even to the function and is called when
-//the condition is met such as "click", "mouseover", etc
-
-function handleClick(){
-  alert("I got clicked");
-}
-
-*/
-
-
-//___________________________________________________
-
-
-//Click, Hover ,Mouse out.
-// document.querySelector("button").addEventListener("click", function(){
-//   console.log("I have been clicked");
-// });
-//
-// document.querySelector("button").addEventListener("mouseover", function(){
-//   console.log("Hover");
-// });
-//
-// document.querySelector("button").addEven tListener("mouseout", function(){
-//   console.log("out");
-// });
