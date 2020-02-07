@@ -1,10 +1,7 @@
-var kick = new Audio('sounds/kick-bass.mp3');
-var crash = new Audio('sounds/crash.mp3');
-var tom1 = new Audio('sounds/tom-1.mp3');
-var tom2 = new Audio('sounds/tom-2.mp3');
-var tom3 = new Audio('sounds/tom-3.mp3');
-var tom4 = new Audio('sounds/tom-4.mp3');
-var snare = new Audio('sounds/snare.mp3');
+/* By removing the variable/object declaration passed through the Audio constructor
+from here AND adding it into WHEN it is called.
+
+ the sound/audio is much more instantanous and no longer has delay  */
 
 function addPressedClassToBtn(key) {
   document.querySelector("." + key).classList.add("pressed");
@@ -14,24 +11,31 @@ function playAudio(character) {
   switch (character) {
 
     case ("w"):
+    var snare = new Audio('sounds/snare.mp3'); //Added here instead
       return snare.play();
 
     case ("a"):
+    var tom3 = new Audio('sounds/tom-3.mp3');
       return tom3.play();
 
     case ("s"):
+    var tom1 = new Audio('sounds/tom-1.mp3');
       return tom1.play();
 
     case ("d"):
+    var kick = new Audio('sounds/kick-bass.mp3');
       return kick.play();
 
     case ("j"):
+    var tom2 = new Audio('sounds/tom-2.mp3');
       return tom2.play();
 
     case ("k"):
+    var tom4 = new Audio('sounds/tom-4.mp3');
       return tom4.play();
 
     case ("l"):
+    var crash = new Audio('sounds/crash.mp3');
       return crash.play();
 
     default: //This runs when an input other than the above are detected.
