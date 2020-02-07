@@ -6,68 +6,55 @@ var tom3 = new Audio('sounds/tom-3.mp3');
 var tom4 = new Audio('sounds/tom-4.mp3');
 var snare = new Audio('sounds/snare.mp3');
 
-function removePressedFromButton()
-{
-  for (var i=0; i < document.querySelectorAll("button").length; i++ )
-  {
+function removePressedFromButton() {
+  for (var i = 0; i < document.querySelectorAll("button").length; i++) {
     document.querySelectorAll("button")[i].classList.remove("pressed");
   }
 }
 
-function addPressedClassToBtn(key){
-  document.querySelector("."+key).classList.add("pressed");
+function addPressedClassToBtn(key) {
+  document.querySelector("." + key).classList.add("pressed");
 }
 
 
-function playAudio (character) {
+function playAudio(character) {
   switch (character) {
 
     case ("w"):
-      removePressedFromButton();
-      addPressedClassToBtn(character);
-      snare.play();
-  //    document.querySelector(".w").classList.remove("pressed");
+
+      return snare.play();
+      //    document.querySelector(".w").classList.remove("pressed");
       //this has no effect. i.e. causes no animation
       //therefore the removePressedFromButton() function was created.
-      break;
+
       //break not needed as, return should break/stop the case/switch.
 
       //call for animation will go here
 
     case ("a"):
-      removePressedFromButton();
-      addPressedClassToBtn(character);
-      tom3.play();
-      break;
+      return tom3.play();
+
 
     case ("s"):
-    removePressedFromButton();
-    addPressedClassToBtn(character);
       return tom1.play();
 
     case ("d"):
-    removePressedFromButton();
-    addPressedClassToBtn(character);
       return kick.play();
 
     case ("j"):
-    removePressedFromButton();
-    addPressedClassToBtn(character);
       return tom2.play();
 
     case ("k"):
-    removePressedFromButton();
-    addPressedClassToBtn(character);
       return tom4.play();
 
     case ("l"):
-    removePressedFromButton();
-    addPressedClassToBtn(character);
+      removePressedFromButton();
+      addPressedClassToBtn(character);
       return crash.play();
 
     default: //This runs when an input other than the above are detected.
       console.log(event);
-      console.log("Key entered is: "+event.key + " which has no functionality for this webpage");
+      console.log("Key entered is: " + event.key + " which has no functionality for this webpage");
   }
 }
 
@@ -77,12 +64,13 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
     console.log(this); //this returns/is the current button that was clicked.
     console.log(this.textContent); //its content/child, etc can be retrieved.
-//i.e.
-//this.textContent or className returns the textContent or class name of the triggered button
-// this.style.color ="white"; //<--Challenge
-
+    //i.e.
+    //this.textContent or className returns the textContent or class name of the triggered button
+    // this.style.color ="white"; //<--Challenge
 
     var letterStorage = this.textContent;
+    removePressedFromButton();
+    addPressedClassToBtn(letterStorage);
     playAudio(letterStorage);
 
   })
@@ -93,7 +81,9 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 
 //document.addEventListener works too.
 document.querySelector("html").addEventListener("keydown", function(event) {
-    playAudio(event.key);
+  removePressedFromButton();
+  addPressedClassToBtn(event.key);
+  playAudio(event.key);
 });
 
 
