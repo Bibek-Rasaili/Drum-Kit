@@ -7,6 +7,7 @@ function addPressedClassToBtn(key) {
   document.querySelector("." + key).classList.add("pressed");
 }
 
+
 function playAudio(character) {
   switch (character) {
 
@@ -44,6 +45,7 @@ function playAudio(character) {
   }
 }
 
+
 // Detecting Button click
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   document.querySelectorAll(".drum")[i].addEventListener("click", function() {
@@ -62,8 +64,8 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
   })
 }
 
-// Detecting Keyboard Press/Down
 
+// Detecting Keyboard Press/Down
 //document.addEventListener works too.
 document.querySelector("html").addEventListener("keydown", function(event) {
 
